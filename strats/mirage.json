@@ -1,0 +1,112 @@
+[
+    {
+        "Buy": "Pistol",
+        "Start": "2 underpass, 2 A Ramp (Bomb, Smokes), 1 palace",
+        "Mid": "Once underpass players get close to window, throw A smokes, boost one into window, attack",
+        "Smokes": [
+            "CT, Jungle"
+        ],
+        "Event": "ESL Pro League Finals Season 8 2018",
+        "Round": 1,
+        "Team": "Astralis",
+        "Side": "Offense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Pistol",
+        "Start": "3 Mid, 1 Palace, 1 A Main (Bomb)",
+        "Mid": "Mid players push, mollying window and smoking deep cat. One mid player jumps to window, other 2 push through connector as A smoke jungle and flash out.",
+        "Smokes": [
+            "Deep Cat, Jungle"
+        ],
+        "Event": "ESL Pro League Finals Season 8 2018",
+        "Round": 16,
+        "Team": "Liquid",
+        "Side": "Offense"
+    },
+    {
+        "Buy": "Pistol",
+        "Start": "3 Mid, 1 Palace, 1 A Main (Bomb)",
+        "Mid": "Flash over from A main to pull window player, Mid players then push after the flash. A smokes jungle, Mid smokes deep cat. Don't push out A till players push through connector. One player waits Cat or Window for rotators.",
+        "Smokes": [
+            "Deep Cat, Jungle"
+        ],
+        "Event": "ESL Pro League Finals Season 7 2018",
+        "Round": 16,
+        "Team": "Astralis",
+        "Side": "Offense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Full Buy",
+        "Start": "1 Palace, 2 Mid, 2 B Apps",
+        "Mid": "Smoke window and deep Cat. Push Cat watching/using utility connector. Split B with Palace player playing lurk.",
+        "Smokes": [
+            "Deep Cat, Window"
+        ],
+        "Event": "ESL Pro League Finals Season 8 2018",
+        "Round": 5,
+        "Team": "Astralis",
+        "Side": "Offense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Full Buy",
+        "Start": "4 B Apps, 1 Mid",
+        "Mid": "Smoke deep Cat and Window from spawn. Mid player molly connector and work mid to start the split to B. Apps players molly van and push apps.",
+        "Smokes": [
+            "Deep Cat, Window"
+        ],
+        "Event": "ESL Pro League Finals Season 8 2018",
+        "Round": 6,
+        "Team": "Astralis",
+        "Side": "Offense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Full Buy",
+        "Start": "3 Palace, 1 A Main, 1 Mid",
+        "Mid": "Smoke off Window and Deep Cat from spawn. From A main, flash over and the 3 in palace rush out dry. Mid player do not die, use utility to distract.",
+        "Smokes": [
+            "Wnidow, Deep Cat"
+        ],
+        "Event": "ESL Pro League Finals Season 8 2018",
+        "Round": 7,
+        "Team": "Astralis",
+        "Side": "Offense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Save",
+        "Start": "3 under Balcony (1 smoke), 1 Palace, 1 CT",
+        "Mid": "Just wait for them to come into the site so cross fires are set up. Smoke if they molly under balc.",
+        "Smokes": [],
+        "Event": "ESL Pro League Finals Season 8 2018",
+        "Round": 9,
+        "Team": "Liquid",
+        "Side": "Defense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Force Buy",
+        "Start": "2 Palace, 2 Push Mid, 1 Window",
+        "Mid": "Push palace, Push Top Mid, Window player throws a flash for the 2 pushing top mid.",
+        "Smokes": [],
+        "Event": "ESL Pro League Finals Season 7 2018",
+        "Round": 17,
+        "Team": "Liquid",
+        "Side": "Defense",
+        "Clip": ""
+    },
+    {
+        "Buy": "Full Buy",
+        "Start": "2 Rush Palace, 1 Cat, 1 B, 1 CT",
+        "Mid": "Push palace and get a pick, or if no one there, one holds inside palace and one rotates off A.",
+        "Smokes": [],
+        "Event": "IEM Chicago 2018 Finals",
+        "Round": 6,
+        "Team": "Liquid",
+        "Side": "Defense",
+        "Clip": ""
+    }
+]
