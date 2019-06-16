@@ -51,7 +51,7 @@ export default StyleSheet.create({
 
     // Strats css
     strats: {
-        width: '100%',
+        width: 'auto',
         margin: 10
     }
 })

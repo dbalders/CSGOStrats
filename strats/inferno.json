@@ -1,1 +1,151 @@
-[{}]
+[{
+    "Buy": "Pistol",
+    "Start": "1 B, 4 Mid",
+    "Mid": "All 4 players going Mid just push straight down Mid",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 1,
+    "Team": "Ence",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Save",
+    "Start": "All 5 Apps",
+    "Mid": "3 push down the stairs towards Alt Mid, 2 go to the window room to see if anyone is Alt Mid.",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 2,
+    "Team": "Ence",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "1 Banana (defensive), 1 Alt Mid Bridge (Spamming Apps), 2 Apps, 1 jump to Window",
+    "Mid": "Banana and Bridge work towards Top Mid. Take Apps control. All at once, both Mid players flash each side of Top Mid and Apps throws a flash off the chimney. 2 players jump out of the balcony while the 3rd kills the Pit player. The two Mid players run into Apps to play Boiler and support Porch.",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 5,
+    "Team": "Astralis",
+    "Side": "Offense",
+    "Clip": ""
+}, {
+    "Buy": "Pistol",
+    "Start": "All 5 push hard up Mid with armour purchased",
+    "Mid": "4 players go towards Arch while 1 goes Lane. Make decision to wrap B or go A.",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 6,
+    "Team": "Ence",
+    "Side": "Offense",
+    "Clip": ""
+}, {
+    "Buy": "Save",
+    "Start": "2 Boosted Patio, 1 Cubby, 1 Mini Pit, 1 Coffin.",
+    "Mid": "Wait for them to push Top Mid and play off each other.",
+    "Smokes": [],
+    "Event": "ESL Pro League 2018 Finals (Astralis vs Liquid)",
+    "Round": 8,
+    "Team": "Liquid",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "3 A, 2 B",
+    "Mid": "Do not show yourself Mid. After ~10 seconds, have a teammate (or yourself) flash Mid and peak. Smoke top mid and reset to your default.",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 9,
+    "Team": "Liquid",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "(Needs AWP) 2 B, 3 A Patio with AWP boosted onto Patio then jumping to planter box.",
+    "Mid": "Player who boosted AWPer, hide under patio and other A player play under the AWPer assisting for Mid push.",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 10,
+    "Team": "Liquid",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "(Needs AWP) 2 B, 3 Mid",
+    "Mid": "Closest A player pushes down Mid while the AWP watches down Mid for Ts running out. 3rd A player supports using utility or watching Alt Mid.",
+    "Smokes": [],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 15,
+    "Team": "Liquid",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "3 B, 1 Apps, 1 Boiler",
+    "Mid": "Throw deep Banana molly, and deep Banana smoke. Double high Banana flash and push down Banana, spamming through the smoke. After you get control, 2 players rotate A and 1 holds Banana.",
+    "Smokes": ["Deep Banana"],
+    "Event": "IEM Katowice 2019 Finals (Astralis vs Liquid)",
+    "Round": 24,
+    "Team": "Astralis",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Save",
+    "Start": "4 B, 1 Library",
+    "Mid": "3 go to sandbag, 1 stay on B site holding a flash. On contact, flash high for Banana.",
+    "Smokes": [],
+    "Event": "ESL One Cologne 2018 Semi Finals (Astralis vs Navi)",
+    "Round": 5,
+    "Team": "Astralis",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "2 B, 2 A, 1 Mid",
+    "Mid": "Mid player molly Lower Mid, followed by a smoke. Rush into Sewer and head towards Alt Mid. Another player distract Alt Mid players from Window while Sewer player pops up behind them.",
+    "Smokes": ["Lower Mid"],
+    "Event": "ESL One Cologne 2018 Semi Finals (Astralis vs Navi)",
+    "Round": 14,
+    "Team": "Astralis",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Pistol",
+    "Start": "2 Banana, 1 Mid Sewer, 2 Alt Mid",
+    "Mid": "2 Banana players hide in the right Banana cubby, boosting on each other, waiting for Banana agression. Other players just play a little slow and see how the round plays out.",
+    "Smokes": [],
+    "Event": "ESL One Cologne 2018 Semi Finals (Astralis vs Navi)",
+    "Round": 16,
+    "Team": "Astralis",
+    "Side": "Offense",
+    "Clip": ""
+}, {
+    "Buy": "Pistol",
+    "Start": "4 B, 1 A (with smoke)",
+    "Mid": "A player checks Mid while crossing to boiler, then jump peeks Alt Mid. If A players spots anyone pusing Mid or Alt Mid, they smoke Mid and players from B rotate. If not, keep the stack.",
+    "Smokes": ["Top Mid"],
+    "Event": "ESL One Cologne 2018 Semi Finals (Astralis vs Navi)",
+    "Round": 16,
+    "Team": "Navi",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Full Buy",
+    "Start": "2 B, 2 Apps, 1 Arch",
+    "Mid": "2 Apps players push in and stand almost back to back, one watching down the stairs and one watching the doorway from Window",
+    "Smokes": [],
+    "Event": "ESL One Cologne 2018 Semi Finals (Astralis vs Navi)",
+    "Round": 23,
+    "Team": "Navi",
+    "Side": "Defense",
+    "Clip": ""
+}, {
+    "Buy": "Force Buy",
+    "Start": "3 Banana (with HE grenades), 2 Alt Mid",
+    "Mid": "Molly car and then triple HE over the half wall to the corner where AWPers sit.",
+    "Smokes": [],
+    "Event": "ESL One Cologne 2018 Semi Finals (Astralis vs Navi)",
+    "Round": 24,
+    "Team": "Astralis",
+    "Side": "Offense",
+    "Clip": ""
+}]
