@@ -60,13 +60,36 @@ export default StyleSheet.create({
     homeMap: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'powderblue',
-        // backgroundImage: url('./images/mirage.jpg')
     },
 
     // Strats css
-    strats: {
-        width: 'auto',
-        margin: 10
+    stratContainer: {
+        flex: 1,
+        flexDirection: 'column',
+    },
+    stratHeader: {
+        fontSize: 20,
+        textAlign: 'center',
+        backgroundColor: 'lightgray',
+        padding: 25
+    },
+    strat: {
+        // width: '100%',
+        margin: 10,
+        flexDirection: 'row',
+        height: 'auto'
+        // alignItems: 'center'
+    },
+    stratTitle: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        width: '20%',
+        paddingTop: 4
+    },
+    stratDesc: {
+        width: '80%',
+        fontSize: 16,
+        lineHeight: 25,
+        letterSpacing: .2
     }
 })

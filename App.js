@@ -22,16 +22,12 @@ const instructions = Platform.select({
 
 class HomeScreen extends React.Component {
 	static navigationOptions = {
-		title: 'CSGO Strats',
+		title: 'Select a Map',
+		headerBackTitle: 'Map Selection'
 	};
 	render() {
 		const { navigate } = this.props.navigation;
 		return (
-			// <Button
-			//   title="Go to Jane's profile"
-			//   onPress={() => navigate('Map', {name: 'Jane'})}
-			// />
-			// <React.Fragment>
 			<View style={styles.linkContainer}>
 				<View style={styles.homeMap}>
 					<ImageBackground
@@ -144,7 +140,8 @@ class HomeScreen extends React.Component {
 
 class OffDefScreen extends React.Component {
 	static navigationOptions = {
-		title: 'Offense or Defense',
+		title: 'T or CT',
+		headerBackTitle: 'T/CT'
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -161,7 +158,7 @@ class OffDefScreen extends React.Component {
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
-								Offense
+								Terrorists
 							</Text>
 						</TouchableOpacity>
 					</ImageBackground>
@@ -175,7 +172,7 @@ class OffDefScreen extends React.Component {
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
-								Defense
+								Counter-Terrorists
 							</Text>
 						</TouchableOpacity>
 					</ImageBackground>
@@ -200,7 +197,8 @@ class OffDefScreen extends React.Component {
 
 class MapScreen extends React.Component {
 	static navigationOptions = {
-		title: 'Map',
+		title: 'Round Buy',
+		headerBackTitle: 'Round Buy'
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -319,18 +317,32 @@ class StratsScreen extends React.Component {
 		const stratSelected = stratSelectedData[randomNumber]
 
 		return (
-			<React.Fragment>
-				<Text style={styles.welcome}>
+
+			<View style={styles.stratContainer}>
+				<Text style={styles.stratHeader}>
 					{stratName} ({mapSide})
-				</Text>
-				<View style={styles.container, styles.flexWrapper}>
-					<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Start:</Text> {stratSelected.Start}</Text>
-			<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Middle:</Text> { stratSelected.Mid }</Text >
-				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Smokes:</Text> {stratSelected.Smokes}</Text>
-				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Team:</Text> {stratSelected.Team}</Text>
-				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Event:</Text> {stratSelected.Event} - Round {stratSelected.Round}</Text>
-				</View >
-			</React.Fragment >
+			 	</Text>
+				<View style={styles.strat}>
+					<Text style={styles.stratTitle}>Start: </Text>
+					<Text style={styles.stratDesc}>{stratSelected.Start}</Text>
+				</View>
+				<View style={styles.strat}>
+					<Text style={styles.stratTitle}>Middle: </Text>
+					<Text style={styles.stratDesc}>{stratSelected.Mid}</Text>
+				</View>
+				<View style={styles.strat}>
+					<Text style={styles.stratTitle}>Smokes: </Text>
+					<Text style={styles.stratDesc}>{stratSelected.Smokes}</Text>
+				</View>
+				<View style={styles.strat}>
+					<Text style={styles.stratTitle}>Team: </Text>
+					<Text style={styles.stratDesc}>{stratSelected.Team}</Text>
+				</View>
+				<View style={styles.strat}>
+					<Text style={styles.stratTitle}>Event: </Text>
+					<Text style={styles.stratDesc}>{stratSelected.Event} - Round {stratSelected.Round}</Text>
+				</View>
+			</View >
 		);
 	}
 }
@@ -345,35 +357,3 @@ const MainNavigator = createStackNavigator({
 const App = createAppContainer(MainNavigator);
 
 export default App;
-
-// type Props = {};
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>Welcome to React Native!</Text>
-//         <Text style={styles.instructions}>To get started, edit App.js</Text>
-//         <Text style={styles.instructions}>{instructions}</Text>
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-// 	container: {
-// 		flex: 1,
-// 		justifyContent: 'center',
-// 		alignItems: 'center',
-// 		backgroundColor: '#F5FCFF',
-// 	},
-// 	welcome: {
-// 		fontSize: 20,
-// 		textAlign: 'center',
-// 		margin: 10,
-// 	},
-// 	instructions: {
-// 		textAlign: 'center',
-// 		color: '#333333',
-// 		marginBottom: 5,
-// 	},
-// });
