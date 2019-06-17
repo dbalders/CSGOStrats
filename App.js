@@ -23,7 +23,13 @@ const instructions = Platform.select({
 class HomeScreen extends React.Component {
 	static navigationOptions = {
 		title: 'Select a Map',
-		headerBackTitle: 'Map Selection'
+		headerBackTitle: 'Map Selection',
+		headerRight: (
+			<Button
+			  onPress={() => alert('Notebook')}
+			  title="Notebook"
+			/>
+		  ),
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -141,7 +147,13 @@ class HomeScreen extends React.Component {
 class OffDefScreen extends React.Component {
 	static navigationOptions = {
 		title: 'T or CT',
-		headerBackTitle: 'T/CT'
+		headerBackTitle: 'T/CT',
+		headerRight: (
+			<Button
+			  onPress={() => alert('Notebook')}
+			  title="Notebook"
+			/>
+		  ),
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -178,19 +190,6 @@ class OffDefScreen extends React.Component {
 					</ImageBackground>
 				</View>
 			</View>
-			// <React.Fragment>
-			// 	<Text style={styles.welcome}>
-			// 		Offense or Defense?
-			// 	</Text>
-			// 	<Button
-			// 		title="Offense"
-			// 		onPress={() => navigate('Map', { side: 'Offense', map: mapName })}
-			// 	/>
-			// 	<Button
-			// 		title="Defense"
-			// 		onPress={() => navigate('Map', { side: 'Defense', map: mapName })}
-			// 	/>
-			// </React.Fragment>
 		);
 	}
 }
@@ -198,7 +197,13 @@ class OffDefScreen extends React.Component {
 class MapScreen extends React.Component {
 	static navigationOptions = {
 		title: 'Round Buy',
-		headerBackTitle: 'Round Buy'
+		headerBackTitle: 'Round Buy',
+		headerRight: (
+			<Button
+			  onPress={() => alert('Notebook')}
+			  title="Notebook"
+			/>
+		  ),
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -273,6 +278,12 @@ class MapScreen extends React.Component {
 class StratsScreen extends React.Component {
 	static navigationOptions = {
 		title: 'Strats',
+		headerRight: (
+			<Button
+			  onPress={() => alert('Notebook')}
+			  title="Notebook"
+			/>
+		  ),
 	};
 	render() {
 		const strats = {
@@ -341,6 +352,16 @@ class StratsScreen extends React.Component {
 				<View style={styles.strat}>
 					<Text style={styles.stratTitle}>Event: </Text>
 					<Text style={styles.stratDesc}>{stratSelected.Event} - Round {stratSelected.Round}</Text>
+				</View>
+				<View style={styles.stratAdd}>
+					<TouchableOpacity
+						// onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide })}
+						style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+						<Text
+							style={{ opacity: 1, textAlign: 'center', fontSize: 20, color: 'white' }}>
+							Add Strat to Notebook
+						</Text>
+					</TouchableOpacity>
 				</View>
 			</View >
 		);

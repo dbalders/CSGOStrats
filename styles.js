@@ -91,5 +91,9 @@ export default StyleSheet.create({
         fontSize: 16,
         lineHeight: 25,
         letterSpacing: .2
+    },
+    stratAdd: {
+        height: 75,
+        marginTop: 'auto'
     }
 })
