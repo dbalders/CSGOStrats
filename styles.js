@@ -49,6 +49,21 @@ export default StyleSheet.create({
         margin: 0,
     },
 
+    //Navigation CSS
+    linkContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    },
+
+    //Home Page CSS
+    homeMap: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: 'powderblue',
+        // backgroundImage: url('./images/mirage.jpg')
+    },
+
     // Strats css
     strats: {
         width: 'auto',

@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import styles from './styles'
 // import { HomeScreen } from './HomeScreen';
@@ -31,36 +31,113 @@ class HomeScreen extends React.Component {
 			//   title="Go to Jane's profile"
 			//   onPress={() => navigate('Map', {name: 'Jane'})}
 			// />
-			<React.Fragment>
-				<Button
-					title="Mirage"
-					onPress={() => navigate('OffDef', { name: 'Mirage' })}
-				/>
-				<Button
-					title="Inferno"
-					onPress={() => navigate('OffDef', { name: 'Inferno' })}
-				/>
-				<Button
-					title="Dust2"
-					onPress={() => navigate('OffDef', { name: 'Dust2' })}
-				/>
-				<Button
-					title="Nuke"
-					onPress={() => navigate('OffDef', { name: 'Nuke' })}
-				/>
-				<Button
-					title="Train"
-					onPress={() => navigate('OffDef', { name: 'Train' })}
-				/>
-				<Button
-					title="Overpass"
-					onPress={() => navigate('OffDef', { name: 'Overpass' })}
-				/>
-				<Button
-					title="Vertigo"
-					onPress={() => navigate('OffDef', { name: 'Vertigo' })}
-				/>
-			</React.Fragment>
+			// <React.Fragment>
+			<View style={styles.linkContainer}>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/mirage.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'Mirage' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Mirage
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/inferno.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'Inferno' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Inferno
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/dust2.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'dust2' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								dust2
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/nuke.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'Nuke' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Nuke
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/train.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'Train' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Train
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/overpass.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'Overpass' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Overpass
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/vertigo.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('OffDef', { name: 'Vertigo' })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Vertigo
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+			</View>
 		);
 	}
 }
@@ -74,19 +151,49 @@ class OffDefScreen extends React.Component {
 		const navigation = this.props
 		const mapName = this.props.navigation.getParam('name')
 		return (
-			<React.Fragment>
-				<Text style={styles.welcome}>
-					Offense or Defense?
-				</Text>
-				<Button
-					title="Offense"
-					onPress={() => navigate('Map', { side: 'Offense', map: mapName })}
-				/>
-				<Button
-					title="Defense"
-					onPress={() => navigate('Map', { side: 'Defense', map: mapName })}
-				/>
-			</React.Fragment>
+			<View style={styles.linkContainer}>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/terrorists.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('Map', { side: 'Offense', map: mapName })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Offense
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/counter-terrorists.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('Map', { side: 'Defense', map: mapName })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Defense
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+			</View>
+			// <React.Fragment>
+			// 	<Text style={styles.welcome}>
+			// 		Offense or Defense?
+			// 	</Text>
+			// 	<Button
+			// 		title="Offense"
+			// 		onPress={() => navigate('Map', { side: 'Offense', map: mapName })}
+			// 	/>
+			// 	<Button
+			// 		title="Defense"
+			// 		onPress={() => navigate('Map', { side: 'Defense', map: mapName })}
+			// 	/>
+			// </React.Fragment>
 		);
 	}
 }
@@ -102,27 +209,65 @@ class MapScreen extends React.Component {
 		const mapName = this.props.navigation.getParam('map')
 		const mapSide = this.props.navigation.getParam('side')
 		return (
-			<React.Fragment>
-				<Text style={styles.welcome}>
-					{mapName}
-				</Text>
-				<Button
-					title="Pistol"
-					onPress={() => navigate('Strats', { strat: 'Pistol', map: mapName, side: mapSide })}
-				/>
-				<Button
-					title="Full Buy"
-					onPress={() => navigate('Strats', { strat: 'Full Buy', map: mapName, side: mapSide })}
-				/>
-				<Button
-					title="Force Buy"
-					onPress={() => navigate('Strats', { strat: 'Force Buy', map: mapName, side: mapSide })}
-				/>
-				<Button
-					title="Save"
-					onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide })}
-				/>
-			</React.Fragment>
+
+			<View style={styles.linkContainer}>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/pistol_round.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('Strats', { strat: 'Pistol', map: mapName, side: mapSide })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Pistol
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/full_round.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('Strats', { strat: 'Full Buy', map: mapName, side: mapSide })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Full Buy
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/force_round.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('Strats', { strat: 'Force Buy', map: mapName, side: mapSide })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Force Buy
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/save_round.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide })}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Save
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+			</View>
 		);
 	}
 }
@@ -180,7 +325,7 @@ class StratsScreen extends React.Component {
 				</Text>
 				<View style={styles.container, styles.flexWrapper}>
 					<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Start:</Text> {stratSelected.Start}</Text>
-			<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Middle:</Text> { stratSelected.Mid }</Text >
+			<Text style={styles.center, styles.strats}> <Text style={{ fontWeight: 'bold' }}>Middle:</Text> { stratSelected.Mid }</Text >
 				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Smokes:</Text> {stratSelected.Smokes}</Text>
 				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Team:</Text> {stratSelected.Team}</Text>
 				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Event:</Text> {stratSelected.Event} - Round {stratSelected.Round}</Text>
