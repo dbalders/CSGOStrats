@@ -325,7 +325,7 @@ class StratsScreen extends React.Component {
 				</Text>
 				<View style={styles.container, styles.flexWrapper}>
 					<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Start:</Text> {stratSelected.Start}</Text>
-			<Text style={styles.center, styles.strats}> <Text style={{ fontWeight: 'bold' }}>Middle:</Text> { stratSelected.Mid }</Text >
+			<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Middle:</Text> { stratSelected.Mid }</Text >
 				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Smokes:</Text> {stratSelected.Smokes}</Text>
 				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Team:</Text> {stratSelected.Team}</Text>
 				<Text style={styles.center, styles.strats}><Text style={{ fontWeight: 'bold' }}>Event:</Text> {stratSelected.Event} - Round {stratSelected.Round}</Text>
