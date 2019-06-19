@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import store from 'react-native-simple-store';
 import styles from './styles'
 // import { HomeScreen } from './HomeScreen';
 // import { ProfileScreen } from './ProfileScreen';
@@ -21,16 +22,46 @@ const instructions = Platform.select({
 });
 
 class HomeScreen extends React.Component {
-	static navigationOptions = {
+
+	// static navigationOptions = {
+	// 	title: 'Select a Map',
+	// 	headerBackTitle: 'Map Selection',
+	// 	headerRight: (
+	// 		<Button
+	// 			onPress={this.params.getStrats}
+	// 			// onPress={() => store.get('Mirage').then((res) => alert(res.Event))}
+	// 			// onPress={this.getStrats}
+	// 			title="Notebook"
+	// 		/>
+	// 	),
+	// };
+
+	componentDidMount() {
+		this.props.navigation.setParams({
+			getStrats: this.getStrats.bind(this)
+		});
+	}
+
+	static navigationOptions = ({ navigation }) => ({
 		title: 'Select a Map',
 		headerBackTitle: 'Map Selection',
 		headerRight: (
-			<Button
-			  onPress={() => alert('Notebook')}
-			  title="Notebook"
+			<Button 
+				onPress={() => { navigation.state.params.getStrats() }} 
+				title="Notebook" 
 			/>
-		  ),
-	};
+		)
+	})
+
+	getStrats() {
+		console.log('here')
+		store.get('mirage')
+			.then(res => {
+				console.log('in here')
+				console.log(res)
+			})
+	}
+
 	render() {
 		const { navigate } = this.props.navigation;
 		return (
@@ -150,10 +181,10 @@ class OffDefScreen extends React.Component {
 		headerBackTitle: 'T/CT',
 		headerRight: (
 			<Button
-			  onPress={() => alert('Notebook')}
-			  title="Notebook"
+				onPress={() => alert('Notebook')}
+				title="Notebook"
 			/>
-		  ),
+		),
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -200,10 +231,10 @@ class MapScreen extends React.Component {
 		headerBackTitle: 'Round Buy',
 		headerRight: (
 			<Button
-			  onPress={() => alert('Notebook')}
-			  title="Notebook"
+				onPress={() => alert('Notebook')}
+				title="Notebook"
 			/>
-		  ),
+		),
 	};
 	render() {
 		const { navigate } = this.props.navigation;
@@ -280,11 +311,18 @@ class StratsScreen extends React.Component {
 		title: 'Strats',
 		headerRight: (
 			<Button
-			  onPress={() => alert('Notebook')}
-			  title="Notebook"
+				onPress={() => alert('Notebook')}
+				title="Notebook"
 			/>
-		  ),
+		),
 	};
+
+	addStrat(stratMap, stratSelected) {
+		store.push(stratMap, stratSelected)
+		console.log(stratMap)
+		console.log(stratSelected)
+	}
+
 	render() {
 		const strats = {
 			mirage: require('./strats/mirage.json'),
@@ -355,7 +393,8 @@ class StratsScreen extends React.Component {
 				</View>
 				<View style={styles.stratAdd}>
 					<TouchableOpacity
-						// onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide })}
+						// onPress={() => store.push(stratName, stratSelected)}
+						onPress={this.addStrat(mapName, stratSelected)}
 						style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 						<Text
 							style={{ opacity: 1, textAlign: 'center', fontSize: 20, color: 'white' }}>

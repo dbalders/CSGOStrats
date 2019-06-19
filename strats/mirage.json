@@ -10,7 +10,8 @@
         "Round": 1,
         "Team": "Astralis",
         "Side": "Offense",
-        "Clip": ""
+        "Clip": "",
+        "id": 1
     },
     {
         "Buy": "Pistol",
@@ -22,7 +23,9 @@
         "Event": "ESL Pro League Finals Season 8 2018",
         "Round": 16,
         "Team": "Liquid",
-        "Side": "Offense"
+        "Side": "Offense",
+        "Clip": "",
+        "id": 2
     },
     {
         "Buy": "Pistol",
@@ -35,7 +38,8 @@
         "Round": 16,
         "Team": "Astralis",
         "Side": "Offense",
-        "Clip": ""
+        "Clip": "",
+        "id": 3
     },
     {
         "Buy": "Full Buy",
@@ -48,7 +52,8 @@
         "Round": 5,
         "Team": "Astralis",
         "Side": "Offense",
-        "Clip": ""
+        "Clip": "",
+        "id": 4
     },
     {
         "Buy": "Full Buy",
@@ -61,7 +66,8 @@
         "Round": 6,
         "Team": "Astralis",
         "Side": "Offense",
-        "Clip": ""
+        "Clip": "",
+        "id": 5
     },
     {
         "Buy": "Full Buy",
@@ -74,7 +80,8 @@
         "Round": 7,
         "Team": "Astralis",
         "Side": "Offense",
-        "Clip": ""
+        "Clip": "",
+        "id": 6
     },
     {
         "Buy": "Save",
@@ -85,7 +92,8 @@
         "Round": 9,
         "Team": "Liquid",
         "Side": "Defense",
-        "Clip": ""
+        "Clip": "",
+        "id": 7
     },
     {
         "Buy": "Force Buy",
@@ -96,7 +104,8 @@
         "Round": 17,
         "Team": "Liquid",
         "Side": "Defense",
-        "Clip": ""
+        "Clip": "",
+        "id": 8
     },
     {
         "Buy": "Full Buy",
@@ -107,6 +116,7 @@
         "Round": 6,
         "Team": "Liquid",
         "Side": "Defense",
-        "Clip": ""
+        "Clip": "",
+        "id": 9
     }
 ]

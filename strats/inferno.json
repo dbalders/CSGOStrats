@@ -7,7 +7,8 @@
     "Round": 1,
     "Team": "Ence",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 1
 }, {
     "Buy": "Save",
     "Start": "All 5 Apps",
@@ -17,7 +18,8 @@
     "Round": 2,
     "Team": "Ence",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 2
 }, {
     "Buy": "Full Buy",
     "Start": "1 Banana (defensive), 1 Alt Mid Bridge (Spamming Apps), 2 Apps, 1 jump to Window",
@@ -27,7 +29,8 @@
     "Round": 5,
     "Team": "Astralis",
     "Side": "Offense",
-    "Clip": ""
+    "Clip": "",
+    "id": 3
 }, {
     "Buy": "Pistol",
     "Start": "All 5 push hard up Mid with armour purchased",
@@ -37,7 +40,8 @@
     "Round": 6,
     "Team": "Ence",
     "Side": "Offense",
-    "Clip": ""
+    "Clip": "",
+    "id": 4
 }, {
     "Buy": "Save",
     "Start": "2 Boosted Patio, 1 Cubby, 1 Mini Pit, 1 Coffin.",
@@ -47,7 +51,8 @@
     "Round": 8,
     "Team": "Liquid",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 5
 }, {
     "Buy": "Full Buy",
     "Start": "3 A, 2 B",
@@ -57,7 +62,8 @@
     "Round": 9,
     "Team": "Liquid",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 6
 }, {
     "Buy": "Full Buy",
     "Start": "(Needs AWP) 2 B, 3 A Patio with AWP boosted onto Patio then jumping to planter box.",
@@ -67,7 +73,8 @@
     "Round": 10,
     "Team": "Liquid",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 7
 }, {
     "Buy": "Full Buy",
     "Start": "(Needs AWP) 2 B, 3 Mid",
@@ -77,7 +84,8 @@
     "Round": 15,
     "Team": "Liquid",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 8
 }, {
     "Buy": "Full Buy",
     "Start": "3 B, 1 Apps, 1 Boiler",
@@ -87,7 +95,8 @@
     "Round": 24,
     "Team": "Astralis",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 9
 }, {
     "Buy": "Save",
     "Start": "4 B, 1 Library",
@@ -97,7 +106,8 @@
     "Round": 5,
     "Team": "Astralis",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 10
 }, {
     "Buy": "Full Buy",
     "Start": "2 B, 2 A, 1 Mid",
@@ -107,7 +117,8 @@
     "Round": 14,
     "Team": "Astralis",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 11
 }, {
     "Buy": "Pistol",
     "Start": "2 Banana, 1 Mid Sewer, 2 Alt Mid",
@@ -117,7 +128,8 @@
     "Round": 16,
     "Team": "Astralis",
     "Side": "Offense",
-    "Clip": ""
+    "Clip": "",
+    "id": 12
 }, {
     "Buy": "Pistol",
     "Start": "4 B, 1 A (with smoke)",
@@ -127,7 +139,8 @@
     "Round": 16,
     "Team": "Navi",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 13
 }, {
     "Buy": "Full Buy",
     "Start": "2 B, 2 Apps, 1 Arch",
@@ -137,7 +150,8 @@
     "Round": 23,
     "Team": "Navi",
     "Side": "Defense",
-    "Clip": ""
+    "Clip": "",
+    "id": 14
 }, {
     "Buy": "Force Buy",
     "Start": "3 Banana (with HE grenades), 2 Alt Mid",
@@ -147,5 +161,28 @@
     "Round": 24,
     "Team": "Astralis",
     "Side": "Offense",
-    "Clip": ""
+    "Clip": "",
+    "id": 15
+}, {
+    "Buy": "Pistol",
+    "Start": "2 Banana (Smokes and HEs), 1 Mid (Smoke and Molly), 2 Alt Mid",
+    "Mid": "Plan is to go B, so slowly see if they push anywhere, make presense towards A, take Banana. Boost 2 onto half wall and nade Coffin. Smoke CT and Coffin. Molly New Box.",
+    "Smokes": ["CT", "Coffin"],
+    "Event": "ESL Pro League Season 9 (Astralis vs Cloud9)",
+    "Round": 1,
+    "Team": "Astralis",
+    "Side": "Offense",
+    "Clip": "",
+    "id": 16
+}, {
+    "Buy": "Pistol",
+    "Start": "1 B (Smoke, HE), 2 Top Mid, 2 Push Down Mid",
+    "Mid": "Push down the right side of Mid while 2 others hold from Top Mid. Wait a few seconds for contact, if none, push to Lower Mid to flank.",
+    "Smokes": [],
+    "Event": "ESL Pro League Season 9 (Astralis vs Cloud9)",
+    "Round": 16,
+    "Team": "Astralis",
+    "Side": "Defense",
+    "Clip": "",
+    "id": 17
 }]
