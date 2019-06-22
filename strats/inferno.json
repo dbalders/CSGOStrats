@@ -8,7 +8,8 @@
     "Team": "Ence",
     "Side": "Defense",
     "Clip": "",
-    "id": 1
+    "id": 1,
+    "Map": "Inferno"
 }, {
     "Buy": "Save",
     "Start": "All 5 Apps",
@@ -19,7 +20,8 @@
     "Team": "Ence",
     "Side": "Defense",
     "Clip": "",
-    "id": 2
+    "id": 2,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "1 Banana (defensive), 1 Alt Mid Bridge (Spamming Apps), 2 Apps, 1 jump to Window",
@@ -30,7 +32,8 @@
     "Team": "Astralis",
     "Side": "Offense",
     "Clip": "",
-    "id": 3
+    "id": 3,
+    "Map": "Inferno"
 }, {
     "Buy": "Pistol",
     "Start": "All 5 push hard up Mid with armour purchased",
@@ -41,7 +44,8 @@
     "Team": "Ence",
     "Side": "Offense",
     "Clip": "",
-    "id": 4
+    "id": 4,
+    "Map": "Inferno"
 }, {
     "Buy": "Save",
     "Start": "2 Boosted Patio, 1 Cubby, 1 Mini Pit, 1 Coffin.",
@@ -52,7 +56,8 @@
     "Team": "Liquid",
     "Side": "Defense",
     "Clip": "",
-    "id": 5
+    "id": 5,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "3 A, 2 B",
@@ -63,7 +68,8 @@
     "Team": "Liquid",
     "Side": "Defense",
     "Clip": "",
-    "id": 6
+    "id": 6,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "(Needs AWP) 2 B, 3 A Patio with AWP boosted onto Patio then jumping to planter box.",
@@ -74,7 +80,8 @@
     "Team": "Liquid",
     "Side": "Defense",
     "Clip": "",
-    "id": 7
+    "id": 7,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "(Needs AWP) 2 B, 3 Mid",
@@ -85,7 +92,8 @@
     "Team": "Liquid",
     "Side": "Defense",
     "Clip": "",
-    "id": 8
+    "id": 8,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "3 B, 1 Apps, 1 Boiler",
@@ -96,7 +104,8 @@
     "Team": "Astralis",
     "Side": "Defense",
     "Clip": "",
-    "id": 9
+    "id": 9,
+    "Map": "Inferno"
 }, {
     "Buy": "Save",
     "Start": "4 B, 1 Library",
@@ -107,7 +116,8 @@
     "Team": "Astralis",
     "Side": "Defense",
     "Clip": "",
-    "id": 10
+    "id": 10,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "2 B, 2 A, 1 Mid",
@@ -118,7 +128,8 @@
     "Team": "Astralis",
     "Side": "Defense",
     "Clip": "",
-    "id": 11
+    "id": 11,
+    "Map": "Inferno"
 }, {
     "Buy": "Pistol",
     "Start": "2 Banana, 1 Mid Sewer, 2 Alt Mid",
@@ -129,7 +140,8 @@
     "Team": "Astralis",
     "Side": "Offense",
     "Clip": "",
-    "id": 12
+    "id": 12,
+    "Map": "Inferno"
 }, {
     "Buy": "Pistol",
     "Start": "4 B, 1 A (with smoke)",
@@ -140,7 +152,8 @@
     "Team": "Navi",
     "Side": "Defense",
     "Clip": "",
-    "id": 13
+    "id": 13,
+    "Map": "Inferno"
 }, {
     "Buy": "Full Buy",
     "Start": "2 B, 2 Apps, 1 Arch",
@@ -151,7 +164,8 @@
     "Team": "Navi",
     "Side": "Defense",
     "Clip": "",
-    "id": 14
+    "id": 14,
+    "Map": "Inferno"
 }, {
     "Buy": "Force Buy",
     "Start": "3 Banana (with HE grenades), 2 Alt Mid",
@@ -162,7 +176,8 @@
     "Team": "Astralis",
     "Side": "Offense",
     "Clip": "",
-    "id": 15
+    "id": 15,
+    "Map": "Inferno"
 }, {
     "Buy": "Pistol",
     "Start": "2 Banana (Smokes and HEs), 1 Mid (Smoke and Molly), 2 Alt Mid",
@@ -173,7 +188,8 @@
     "Team": "Astralis",
     "Side": "Offense",
     "Clip": "",
-    "id": 16
+    "id": 16,
+    "Map": "Inferno"
 }, {
     "Buy": "Pistol",
     "Start": "1 B (Smoke, HE), 2 Top Mid, 2 Push Down Mid",
@@ -184,5 +200,6 @@
     "Team": "Astralis",
     "Side": "Defense",
     "Clip": "",
-    "id": 17
+    "id": 17,
+    "Map": "Inferno"
 }]

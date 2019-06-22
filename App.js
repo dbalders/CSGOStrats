@@ -11,8 +11,6 @@ import { Platform, StyleSheet, Text, View, Button, TouchableOpacity, Image, Imag
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import store from 'react-native-simple-store';
 import styles from './styles'
-// import { HomeScreen } from './HomeScreen';
-// import { ProfileScreen } from './ProfileScreen';
 
 const instructions = Platform.select({
 	ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,19 +20,6 @@ const instructions = Platform.select({
 });
 
 class HomeScreen extends React.Component {
-
-	// static navigationOptions = {
-	// 	title: 'Select a Map',
-	// 	headerBackTitle: 'Map Selection',
-	// 	headerRight: (
-	// 		<Button
-	// 			onPress={this.params.getStrats}
-	// 			// onPress={() => store.get('Mirage').then((res) => alert(res.Event))}
-	// 			// onPress={this.getStrats}
-	// 			title="Notebook"
-	// 		/>
-	// 	),
-	// };
 
 	componentDidMount() {
 		this.props.navigation.setParams({
@@ -46,19 +31,23 @@ class HomeScreen extends React.Component {
 		title: 'Select a Map',
 		headerBackTitle: 'Map Selection',
 		headerRight: (
-			<Button 
-				onPress={() => { navigation.state.params.getStrats() }} 
-				title="Notebook" 
+			<Button
+				onPress={() => { navigation.state.params.getStrats() }}
+				title="Notebook"
 			/>
 		)
 	})
 
 	getStrats() {
-		console.log('here')
-		store.get('mirage')
+		const { navigate } = this.props.navigation;
+		store.get('strats')
 			.then(res => {
-				console.log('in here')
-				console.log(res)
+				if (res !== null) {
+					navigate('HomeNotebook', { data: res })
+				} else {
+					alert('No strategies saved')
+				}
+
 			})
 	}
 
@@ -175,21 +164,237 @@ class HomeScreen extends React.Component {
 	}
 }
 
+class HomeScreenNotebook extends React.Component {
+
+	constructor(props) {
+		super(props)
+		this.state = {
+			mirageShow: false,
+			infernoShow: false,
+			dust2Show: false,
+			nukeShow: false,
+			overpassShow: false,
+			trainShow: false,
+			vertigoShow: false,
+			cacheShow: false,
+			mirageStrats: [],
+			infernoStrats: [],
+			dust2Strats: [],
+			nukeStrats: [],
+			overpassStrats: [],
+			trainStrats: [],
+			vertigoStrats: [],
+			cacheStrats: []
+		}
+	}
+
+	componentWillMount() {
+		const notebookData = this.props.navigation.getParam('data', [])
+
+		if (notebookData.length > 0) {
+			var mirageStrats = [];
+			var infernoStrats = [];
+			var dust2Strats = [];
+			var nukeStrats = [];
+			var overpassStrats = [];
+			var trainStrats = [];
+			var cacheStrats = [];
+			var vertigoStrats = [];
+
+			var mirageShow = false;
+			var infernoShow = false;
+			var dust2Show = false;
+			var overpassShow = false;
+			var nukeShow = false;
+			var trainShow = false;
+			var cacheShow = false;
+			var vertigoShow = false;
+
+			for (var i = 0; i < notebookData.length; i++) {
+				if (notebookData[i].Map === "Mirage") {
+					mirageStrats.push(notebookData[i]);
+					mirageShow = true;
+				}
+				if (notebookData[i].Map === "Inferno") {
+					infernoStrats.push(notebookData[i]);
+					infernoShow = true;
+				}
+				if (notebookData[i].Map === "Dust2") {
+					dust2Strats.push(notebookData[i]);
+					dust2Show = true;
+				}
+				if (notebookData[i].Map === "Nuke") {
+					nukeStrats.push(notebookData[i]);
+					nukeShow = true;
+				}
+				if (notebookData[i].Map === "Overpass") {
+					overpassStrats.push(notebookData[i]);
+					overpassShow = true;
+				}
+				if (notebookData[i].Map === "Train") {
+					trainStrats.push(notebookData[i]);
+					trainShow = true;
+				}
+				if (notebookData[i].Map === "Cache") {
+					cacheStrats.push(notebookData[i]);
+					cacheShow = true;
+				}
+				if (notebookData[i].Map === "Vertigo") {
+					vertigoStrats.push(notebookData[i]);
+					vertigoShow = true;
+				}
+			}
+			this.setState({
+				mirageShow: mirageShow,
+				infernoShow: infernoShow,
+				dust2Show: dust2Show,
+				nukeShow: nukeShow,
+				overpassShow: overpassShow,
+				trainShow: trainShow,
+				cacheShow: cacheShow,
+				vertigoShow: vertigoShow,
+				mirageStrats: mirageStrats,
+				infernoStrats: infernoStrats,
+				dust2tratsw: dust2Strats,
+				nukeStrats: nukeStrats,
+				overpassStrats: overpassStrats,
+				trainStrats: trainStrats,
+				cacheStrats: cacheStrats,
+				vertigoStrats: vertigoStrats
+			})
+		}
+	}
+
+	render() {
+		const { navigate } = this.props.navigation;
+		return (
+			<View style={styles.linkContainer}>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/mirage.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.mirageShow}
+							onPress={() => navigate('OffDef', { name: 'Mirage', data: this.state.mirageStrats })}
+							style={[styles.mapList, this.state.mirageShow ? '' : styles.noStrats]}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Mirage
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/inferno.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.infernoShow}
+							onPress={() => navigate('OffDef', { name: 'Inferno', data: this.state.infernoStrats })}
+							style={[styles.mapList, this.state.infernoShow ? '' : styles.noStrats]}>
+							<Text
+								style={[styles.mapListText, this.state.infernoShow ? '' : styles.noStratsText]}>
+								Inferno
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/dust2.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.dust2Show}
+							onPress={() => navigate('OffDef', { name: 'dust2', data: this.state.dust2Strats })}
+							style={[styles.mapList, this.state.dust2Show ? '' : styles.noStrats]}>
+							<Text
+								style={[styles.mapListText, this.state.dust2Show ? '' : styles.noStratsText]}>
+								dust2
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/nuke.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.nukeShow}
+							onPress={() => navigate('OffDef', { name: 'Nuke', data: this.state.nukeStrats })}
+							style={[styles.mapList, this.state.nukeShow ? '' : styles.noStrats]}>
+							<Text
+								style={[styles.mapListText, this.state.nukeShow ? '' : styles.noStratsText]}>
+								Nuke
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/train.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.trainShow}
+							onPress={() => navigate('OffDef', { name: 'Train', data: this.state.trainStrats })}
+							style={[styles.mapList, this.state.trainShow ? '' : styles.noStrats]}>
+							<Text
+								style={[styles.mapListText, this.state.trainShow ? '' : styles.noStratsText]}>
+								Train
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/overpass.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.overpassShow}
+							onPress={() => navigate('OffDef', { name: 'Overpass', data: this.state.overpassStrats })}
+							style={[styles.mapList, this.state.overpassShow ? '' : styles.noStrats]}>
+							<Text
+								style={[styles.mapListText, this.state.overpassShow ? '' : styles.noStratsText]}>
+								Overpass
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/vertigo.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							disabled={!this.state.overpassShow}
+							onPress={() => navigate('OffDef', { name: 'Vertigo', data: this.state.vertigoStrats })}
+							style={[styles.mapList, this.state.vertigoShow ? '' : styles.noStrats]}>
+							<Text
+								style={[styles.mapListText, this.state.vertigoShow ? '' : styles.noStratsText]}>
+								Vertigo
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
+			</View >
+		);
+	}
+}
+
 class OffDefScreen extends React.Component {
 	static navigationOptions = {
 		title: 'T or CT',
 		headerBackTitle: 'T/CT',
-		headerRight: (
-			<Button
-				onPress={() => alert('Notebook')}
-				title="Notebook"
-			/>
-		),
 	};
 	render() {
-		const { navigate } = this.props.navigation;
-		const navigation = this.props
-		const mapName = this.props.navigation.getParam('name')
+		const { navigate } = this.props.navigation;;
+		const navigation = this.props;
+		const mapName = this.props.navigation.getParam('name');
+		const notebookData = this.props.navigation.getParam('data', []);
 		return (
 			<View style={styles.linkContainer}>
 				<View style={styles.homeMap}>
@@ -197,7 +402,7 @@ class OffDefScreen extends React.Component {
 						source={require('./images/terrorists.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Map', { side: 'Offense', map: mapName })}
+							onPress={() => navigate('Map', { side: 'Offense', map: mapName, data: notebookData })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -211,7 +416,7 @@ class OffDefScreen extends React.Component {
 						source={require('./images/counter-terrorists.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Map', { side: 'Defense', map: mapName })}
+							onPress={() => navigate('Map', { side: 'Defense', map: mapName, data: notebookData })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -229,28 +434,22 @@ class MapScreen extends React.Component {
 	static navigationOptions = {
 		title: 'Round Buy',
 		headerBackTitle: 'Round Buy',
-		headerRight: (
-			<Button
-				onPress={() => alert('Notebook')}
-				title="Notebook"
-			/>
-		),
 	};
 	render() {
 		const { navigate } = this.props.navigation;
-		const navigation = this.props
-		// console.log(navigate)
-		const mapName = this.props.navigation.getParam('map')
-		const mapSide = this.props.navigation.getParam('side')
-		return (
+		const navigation = this.props;
+		const mapName = this.props.navigation.getParam('map');
+		const mapSide = this.props.navigation.getParam('side');
+		const notebookData = this.props.navigation.getParam('data', []);
 
+		return (
 			<View style={styles.linkContainer}>
 				<View style={styles.homeMap}>
 					<ImageBackground
 						source={require('./images/pistol_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Pistol', map: mapName, side: mapSide })}
+							onPress={() => navigate('Strats', { strat: 'Pistol', map: mapName, side: mapSide, data: notebookData  })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -264,7 +463,7 @@ class MapScreen extends React.Component {
 						source={require('./images/full_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Full Buy', map: mapName, side: mapSide })}
+							onPress={() => navigate('Strats', { strat: 'Full Buy', map: mapName, side: mapSide, data: notebookData  })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -278,7 +477,7 @@ class MapScreen extends React.Component {
 						source={require('./images/force_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Force Buy', map: mapName, side: mapSide })}
+							onPress={() => navigate('Strats', { strat: 'Force Buy', map: mapName, side: mapSide, data: notebookData  })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -292,7 +491,7 @@ class MapScreen extends React.Component {
 						source={require('./images/save_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide })}
+							onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide, data: notebookData  })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -309,18 +508,10 @@ class MapScreen extends React.Component {
 class StratsScreen extends React.Component {
 	static navigationOptions = {
 		title: 'Strats',
-		headerRight: (
-			<Button
-				onPress={() => alert('Notebook')}
-				title="Notebook"
-			/>
-		),
 	};
 
 	addStrat(stratMap, stratSelected) {
-		store.push(stratMap, stratSelected)
-		console.log(stratMap)
-		console.log(stratSelected)
+		store.push(stratMap, stratSelected);
 	}
 
 	render() {
@@ -340,8 +531,17 @@ class StratsScreen extends React.Component {
 		const stratName = this.props.navigation.getParam('strat');
 		const mapName = this.props.navigation.getParam('map').toLowerCase();
 		const mapSide = this.props.navigation.getParam('side');
-		const stratData = strats[mapName];
+		const notebookData = this.props.navigation.getParam('data', []);
+		var stratData = []
+	
+		if (notebookData.length > 0) {
+			stratData = notebookData;
+		} else {
+			stratData = strats[mapName];
+		}
+
 		var stratSelectedData = [];
+
 		for (var i = 0; i < stratData.length; i++) {
 			if ((stratData[i].Buy === stratName) && (stratData[i].Side === mapSide)) {
 				stratSelectedData.push(stratData[i])
@@ -394,7 +594,7 @@ class StratsScreen extends React.Component {
 				<View style={styles.stratAdd}>
 					<TouchableOpacity
 						// onPress={() => store.push(stratName, stratSelected)}
-						onPress={this.addStrat(mapName, stratSelected)}
+						onPress={this.addStrat('strats', stratSelected)}
 						style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 						<Text
 							style={{ opacity: 1, textAlign: 'center', fontSize: 20, color: 'white' }}>
@@ -412,6 +612,8 @@ const MainNavigator = createStackNavigator({
 	OffDef: { screen: OffDefScreen },
 	Map: { screen: MapScreen },
 	Strats: { screen: StratsScreen },
+	HomeNotebook: { screen: HomeScreenNotebook }
+
 });
 
 const App = createAppContainer(MainNavigator);

@@ -95,5 +95,22 @@ export default StyleSheet.create({
     stratAdd: {
         height: 75,
         marginTop: 'auto'
+    },
+    mapList: {
+        backgroundColor: 'rgba(0,0,0,0.2)', 
+        height: '100%', 
+        justifyContent: 'center'
+    },
+    mapListText: {
+        opacity: 1, 
+        textAlign: 'center', 
+        fontSize: 40, 
+        color: 'white'
+    },
+    noStrats: {
+        backgroundColor: 'rgba(0,0,0,0.8)'
+    },
+    noStratsText: {
+        opacity: .3
     }
 })

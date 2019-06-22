@@ -11,7 +11,8 @@
         "Team": "Astralis",
         "Side": "Offense",
         "Clip": "",
-        "id": 1
+        "id": 1,
+        "Map": "Mirage"
     },
     {
         "Buy": "Pistol",
@@ -25,7 +26,8 @@
         "Team": "Liquid",
         "Side": "Offense",
         "Clip": "",
-        "id": 2
+        "id": 2,
+        "Map": "Mirage"
     },
     {
         "Buy": "Pistol",
@@ -39,7 +41,8 @@
         "Team": "Astralis",
         "Side": "Offense",
         "Clip": "",
-        "id": 3
+        "id": 3,
+        "Map": "Mirage"
     },
     {
         "Buy": "Full Buy",
@@ -53,7 +56,8 @@
         "Team": "Astralis",
         "Side": "Offense",
         "Clip": "",
-        "id": 4
+        "id": 4,
+        "Map": "Mirage"
     },
     {
         "Buy": "Full Buy",
@@ -67,7 +71,8 @@
         "Team": "Astralis",
         "Side": "Offense",
         "Clip": "",
-        "id": 5
+        "id": 5,
+        "Map": "Mirage"
     },
     {
         "Buy": "Full Buy",
@@ -81,7 +86,8 @@
         "Team": "Astralis",
         "Side": "Offense",
         "Clip": "",
-        "id": 6
+        "id": 6,
+        "Map": "Mirage"
     },
     {
         "Buy": "Save",
@@ -93,7 +99,8 @@
         "Team": "Liquid",
         "Side": "Defense",
         "Clip": "",
-        "id": 7
+        "id": 7,
+        "Map": "Mirage"
     },
     {
         "Buy": "Force Buy",
@@ -105,7 +112,8 @@
         "Team": "Liquid",
         "Side": "Defense",
         "Clip": "",
-        "id": 8
+        "id": 8,
+        "Map": "Mirage"
     },
     {
         "Buy": "Full Buy",
@@ -117,6 +125,7 @@
         "Team": "Liquid",
         "Side": "Defense",
         "Clip": "",
-        "id": 9
+        "id": 9,
+        "Map": "Mirage"
     }
 ]
