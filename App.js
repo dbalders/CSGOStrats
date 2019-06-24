@@ -159,6 +159,20 @@ class HomeScreen extends React.Component {
 						</TouchableOpacity>
 					</ImageBackground>
 				</View>
+				<View style={styles.homeMap}>
+					<ImageBackground
+						source={require('./images/vertigo.jpg')}
+						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
+						<TouchableOpacity
+							onPress={() => store.delete('strats')}
+							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+							<Text
+								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								Clear Data
+							</Text>
+						</TouchableOpacity>
+					</ImageBackground>
+				</View>
 			</View>
 		);
 	}
@@ -188,7 +202,7 @@ class HomeScreenNotebook extends React.Component {
 		}
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		const notebookData = this.props.navigation.getParam('data', [])
 
 		if (notebookData.length > 0) {
@@ -278,7 +292,7 @@ class HomeScreenNotebook extends React.Component {
 							onPress={() => navigate('OffDef', { name: 'Mirage', data: this.state.mirageStrats })}
 							style={[styles.mapList, this.state.mirageShow ? '' : styles.noStrats]}>
 							<Text
-								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
+								style={[styles.mapListText, this.state.mirageShow ? '' : styles.noStratsText]}>
 								Mirage
 							</Text>
 						</TouchableOpacity>
@@ -449,7 +463,7 @@ class MapScreen extends React.Component {
 						source={require('./images/pistol_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Pistol', map: mapName, side: mapSide, data: notebookData  })}
+							onPress={() => navigate('Strats', { strat: 'Pistol', map: mapName, side: mapSide, data: notebookData })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -463,7 +477,7 @@ class MapScreen extends React.Component {
 						source={require('./images/full_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Full Buy', map: mapName, side: mapSide, data: notebookData  })}
+							onPress={() => navigate('Strats', { strat: 'Full Buy', map: mapName, side: mapSide, data: notebookData })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -477,7 +491,7 @@ class MapScreen extends React.Component {
 						source={require('./images/force_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Force Buy', map: mapName, side: mapSide, data: notebookData  })}
+							onPress={() => navigate('Strats', { strat: 'Force Buy', map: mapName, side: mapSide, data: notebookData })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -491,7 +505,7 @@ class MapScreen extends React.Component {
 						source={require('./images/save_round.jpg')}
 						style={{ width: '100%', height: '100%', justifyContent: 'center' }}>
 						<TouchableOpacity
-							onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide, data: notebookData  })}
+							onPress={() => navigate('Strats', { strat: 'Save', map: mapName, side: mapSide, data: notebookData })}
 							style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
 							<Text
 								style={{ opacity: 1, textAlign: 'center', fontSize: 40, color: 'white' }}>
@@ -506,12 +520,63 @@ class MapScreen extends React.Component {
 }
 
 class StratsScreen extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			stratSaved: false,
+			allNotebookData: []
+		}
+	}
+
 	static navigationOptions = {
 		title: 'Strats',
 	};
 
-	addStrat(stratMap, stratSelected) {
-		store.push(stratMap, stratSelected);
+	componentWillMount() {
+		store.get('strats')
+			.then(res => {
+				allNotebookData = res;
+				var stratSelected = this.props.navigation.getParam('data', []);
+				var stratSaved = false;
+				for (var i = 0; i < allNotebookData.length; i++) {
+					if ((allNotebookData[i].Map === stratSelected.Map) & (allNotebookData[i].id === stratSelected.id)) {
+						stratSaved = true;
+					}
+				}
+				this.setState({
+					'stratSaved': true,
+					allNotebookData: allNotebookData
+				})
+			})
+	}
+
+	addStrat(stratSelected) {
+		store.push('strats', stratSelected);
+	}
+
+	removeStrat(stratSelected) {
+		const { navigate } = this.props.navigation;
+		var allNotebookData = [];
+
+		store.get('strats')
+			.then(res => {
+				allNotebookData = res;
+				for (var i = 0; i < allNotebookData.length; i++) {
+					if ((allNotebookData[i].Map === stratSelected.Map) & (allNotebookData[i].id === stratSelected.id)) {
+						allNotebookData.splice(i, 1);
+						break;
+					}
+				}
+				store.delete('strats')
+				if (allNotebookData.length > 0) {
+					for (i = 0; i < allNotebookData.length; i++) {
+						store.push('strats', allNotebookData[i]);
+					}
+					navigate('HomeNotebook', { data: allNotebookData });
+				} else {
+					navigate('Home')
+				}
+			})
 	}
 
 	render() {
@@ -532,12 +597,29 @@ class StratsScreen extends React.Component {
 		const mapName = this.props.navigation.getParam('map').toLowerCase();
 		const mapSide = this.props.navigation.getParam('side');
 		const notebookData = this.props.navigation.getParam('data', []);
-		var stratData = []
-	
+		var stratData = [];
+		var addRemoveText;
+
 		if (notebookData.length > 0) {
 			stratData = notebookData;
+			addRemoveText = <TouchableOpacity
+				onPress={() => this.removeStrat(stratSelected)}
+				style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+				<Text
+					style={{ opacity: 1, textAlign: 'center', fontSize: 20, color: 'white' }}>
+					Remove Strat from Notebook
+			</Text>
+			</TouchableOpacity>
 		} else {
 			stratData = strats[mapName];
+			addRemoveText = <TouchableOpacity
+				onPress={() => this.addStrat(stratSelected)}
+				style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
+				<Text
+					style={{ opacity: 1, textAlign: 'center', fontSize: 20, color: 'white' }}>
+					Add Strat to Notebook
+			</Text>
+			</TouchableOpacity>
 		}
 
 		var stratSelectedData = [];
@@ -592,15 +674,7 @@ class StratsScreen extends React.Component {
 					<Text style={styles.stratDesc}>{stratSelected.Event} - Round {stratSelected.Round}</Text>
 				</View>
 				<View style={styles.stratAdd}>
-					<TouchableOpacity
-						// onPress={() => store.push(stratName, stratSelected)}
-						onPress={this.addStrat('strats', stratSelected)}
-						style={{ backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', justifyContent: 'center' }}>
-						<Text
-							style={{ opacity: 1, textAlign: 'center', fontSize: 20, color: 'white' }}>
-							Add Strat to Notebook
-						</Text>
-					</TouchableOpacity>
+					{addRemoveText}
 				</View>
 			</View >
 		);
